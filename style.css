@@ -1,0 +1,372 @@
+body{
+  margin:0;
+  background-image:url("background.png");
+  background-size:cover;      /* 画面いっぱい */
+  background-position:center; /* 中央 */
+  background-repeat:no-repeat;
+  background-attachment:fixed; /* スクロールしても固定 */
+}
+
+/* 背景ゆらぎ */
+.bg-float{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff55 0 60px, transparent 70px),
+    radial-gradient(circle at 80% 70%, #ffffff55 0 60px, transparent 70px);
+  animation:bgMove 20s linear infinite;
+}
+
+@keyframes bgMove{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-40px);}
+  100%{transform:translateY(0);}
+}
+
+/* ロゴ左上 */
+.logo{
+  position:fixed;
+  top:-20px;
+  left:0px;
+  width:450px;
+  z-index:50;
+  animation:logoFloat 4s infinite ease-in-out;
+}
+
+@keyframes logoFloat{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
+}
+
+/* カード */
+.card{
+  background:white;
+  margin:100px auto;
+  padding:40px;
+  width:90%;
+  max-width:520px;
+  border-radius:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+/* アイコン */
+.icon-wrap{
+  position:relative;
+  width:180px;
+  margin:0 auto;
+}
+
+.icon{
+  width:180px;
+  border-radius:50%;
+  border:8px solid #bfe9ff;
+  position:relative;
+  z-index:2;
+}
+
+/* 猫耳 */
+.ear{
+  position:absolute;
+  width:95px;
+  top:-15px;
+  z-index:1;
+  transform-origin:bottom center;
+}
+
+.ear-left{
+  left:-15px;
+  animation:earL 2s infinite ease-in-out;
+}
+
+.ear-right{
+  right:-35px;
+  animation:earR 2s infinite ease-in-out;
+}
+
+@keyframes earL{
+  0%,100%{transform:rotate(-8deg);}
+  50%{transform:rotate(-18deg);}
+}
+
+@keyframes earR{
+  0%,100%{transform:rotate(8deg);}
+  50%{transform:rotate(18deg);}
+}
+
+/* ボタン */
+.links a{
+  display:block;
+  margin:14px auto;
+  padding:18px;
+  width:75%;
+  background:#c9f0ff;
+  border-radius:999px;
+  text-decoration:none;
+  color:#000;
+  font-weight:bold;
+  box-shadow:inset 0 -6px 0 #a8e4ff,0 6px 0 #a8e4ff;
+}
+
+footer{
+  margin:40px;
+  font-size:12px;
+}
+
+/* ロード */
+#load{
+  position:fixed;
+  inset:0;
+  background:#eaf8ff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:0.5s;
+}
+
+.loader{
+  font-size:40px;
+  animation:spin 1s infinite linear;
+}
+
+@keyframes spin{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+
+/* マウス肉球 */
+.sparkpaw{
+  position:fixed;
+  width:22px;
+  pointer-events:none;
+  opacity:0.7;
+  transform:translate(-50%,-50%);
+  animation:sparkpaw 0.7s forwards;
+}
+
+@keyframes sparkpaw{
+  to{
+    transform:translate(-50%,-80%) scale(1.2);
+    opacity:0;
+  }
+}
+
+/* クリック肉球 */
+.clickpaw{
+  position:fixed;
+  width:40px;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  animation:clickpaw 0.9s forwards;
+}
+
+@keyframes clickpaw{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(0.5);}
+  40%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+  100%{opacity:0;transform:translate(-50%,-80%) scale(1.2);}
+}
+.clips iframe{
+  border-radius:20px;
+  margin:15px 0;
+  border:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+h1{
+  font-size:38px;
+  letter-spacing:2px;
+}
+
+.card{
+  backdrop-filter:blur(6px);
+  border:1px solid #ffffffaa;
+}
+
+.links a{
+  font-size:18px;
+  transition:0.15s;
+}
+
+.links a:hover{
+  transform:scale(1.05);
+}
+/* クリップ全体 */
+.clip-wrap{
+  margin-top:30px;
+}
+
+/* タイトル */
+.clip-title{
+  font-size:22px;
+  color:#66cfff;
+  margin-bottom:20px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+/* クリップ並び */
+.clip-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* iframe */
+.clip{
+  width:100%;
+  height:200px;
+  border:none;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:0.2s;
+}
+
+/* ふわ浮き */
+.clip:hover{
+  transform:translateY(-6px) scale(1.02);
+}
+
+/* スマホ */
+@media(max-width:600px){
+  .clip-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* ===== 右上メニュー ===== */
+.nav{
+  position:fixed;
+  top:30px;
+  right:40px;
+  z-index:100;
+  display:flex;
+  gap:26px;
+}
+
+/* ボタン */
+.nav a{
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:bold;
+  letter-spacing:2px;
+  font-size:14px;
+  position:relative;
+  padding:6px 4px;
+  transition:0.25s;
+}
+
+/* 下線ネオン */
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background:#7fe6ff;
+  box-shadow:0 0 10px #7fe6ff;
+  transition:0.25s;
+}
+
+/* hover */
+.nav a{
+  color:#66cfff;        /* 通常 */
+  transition:0.2s;
+}
+
+.nav a:hover{
+  color:#60a5fa;        /* マウス乗せ */
+}
+
+.nav a:active{
+  color:#1d4ed8;        /* クリック中 */
+}
+
+/* ===== 立ち絵 ===== */
+.bg-chara{
+  position:fixed;
+  right:40px;
+  bottom:0;
+  width:500px;
+  height:600px;
+  pointer-events:none;
+  z-index:2;
+}
+
+.bg-chara img{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+}
+
+/* 常に表示（開き目） */
+.chara-base{
+  z-index:1;
+}
+
+/* まばたき用（閉じ目） */
+.chara-blink{
+  z-index:2;
+  opacity:0;
+  animation:blink 5s infinite;
+}
+
+/* まばたき */
+@keyframes blink{
+  0%,92%,100%{opacity:0}
+  94%,96%{opacity:1}
+}
+.chara-base{
+  animation:breath 5s ease-in-out infinite;
+}
+
+@keyframes breath{
+  0%{ transform:translateY(0) scale(1);}
+  25%{ transform:translateY(-3px) scale(1.005);}
+  50%{ transform:translateY(-6px) scale(1.01);}
+  75%{ transform:translateY(-3px) scale(1.005);}
+  100%{ transform:translateY(0) scale(1);}
+}
+/* ===== 夜モード ===== */
+body.dark{
+  background:#0e1a24;
+  color:#e8f6ff;
+}
+
+body.dark .card{
+  background:#1b2b38;
+  color:#e8f6ff;
+}
+
+body.dark .links a{
+  background:#244a63;
+  color:#e8f6ff;
+  box-shadow:inset 0 -6px 0 #1a394d,0 6px 0 #1a394d;
+}
+
+body.dark .nav a{
+  color:#7fe6ff;
+}
+/* ダークモードボタン */
+#darkToggle{
+  background:none;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  color:#3aa9ff;   /* ← 通常色 */
+  transition:0.2s;
+}
+
+/* hover */
+#darkToggle:hover{
+  color:#7fe6ff;
+}
+
+/* 夜モード時 */
+body.dark #darkToggle{
+  color:#7fe6ff;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猫乃めい</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="nav">
+
+  <a href="#">HOME</a>
+  <a href="#profile">PROFILE</a>
+  <a href="#clips">CLIPS</a>
+  <a href="#schedule">SCHEDULE</a>
+  <a href="#link">LINK</a>
+<button id="darkToggle">☀️/🌙</button>
+
+
+</nav>
+
+<!-- 背景ゆらぎ -->
+<div class="bg-float"></div>
+
+<!-- ロゴ -->
+<img src="logo.png" class="logo">
+
+<!-- ロード -->
+<div id="load">
+  <div class="loader">🐾</div>
+</div>
+
+<header class="card header-card">
+
+  <div class="icon-wrap">
+  <img src="earL.png" class="ear ear-left">
+  <img src="earR.png" class="ear ear-right">
+  <img src="icon.png" class="icon">
+</div>
+
+  <h1>猫乃めい</h1>
+  <p class="sub">2025年11月15日デビューのゲーミング猫Vtuber🐱</p>
+</header>
+
+<section id="profile" class="card">
+<h2>PROFILE</h2>
+<p>
+ゲームが大好きな猫<br>
+<br>
+最高ランク<br>
+LOL：D4 / VALO：D1 / DBD：鬼鯖共に赤1 / 雀魂：雀豪
+</p>
+</section>
+
+<section id="clips" class="card">
+  <div class="clip-title">🎬 Twitch Clips</div>
+
+  <div class="clip-grid">
+
+    <iframe
+      src="https://clips.twitch.tv/embed?clip=ManlyRamshackleNikudonUWot-5gz7k16BAlMWzku5&parent=localhost"
+      class="clip"
+      allowfullscreen>
+    </iframe>
+
+    <iframe
+      src="https://clips.twitch.tv/embed?clip=PoisedAmazingMarjoramSquadGoals-Lr961CKyQAMMcOgZ&parent=localhost"
+      class="clip"
+      allowfullscreen>
+    </iframe>
+
+</section>
+
+<section id="clips" class="card">
+  <div class="clip-title">🎤 歌ってみた</div>
+
+  <div class="clip-grid">
+
+    <iframe
+      src="https://clips.twitch.tv/embed?clip=ManlyRamshackleNikudonUWot-5gz7k16BAlMWzku5&parent=localhost"
+      class="clip"
+      allowfullscreen>
+    </iframe>
+
+    <iframe
+      src="https://clips.twitch.tv/embed?clip=PoisedAmazingMarjoramSquadGoals-Lr961CKyQAMMcOgZ&parent=localhost"
+      class="clip"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
+</section>
+
+<section id="schedule" class="card">
+  <h2>SCHEDULE</h2>
+  <p>
+毎日22時からTwitchで配信中🎮️<br>
+寝落ち歓迎！初見さんも気軽にコメントしてね～！<br>
+</p>
+</section>
+
+
+<section id="link" class="card">
+<h2>LINK</h2>
+
+
+<div class="links">
+<a href="https://x.com/Nekono_maple" target="_blank">X</a>
+<a href="https://www.twitch.tv/nekono_mei" target="_blank">Twitch</a>
+<a href="https://www.youtube.com/@nekono_maple" target="_blank">YouTube</a>
+</div>
+</section>
+
+<footer>© 猫乃めい</footer>
+
+<!-- 背景立ち絵ここ -->
+<div class="bg-chara">
+  <img src="body.png" class="chara-base">
+  <img src="blink.png" class="chara-blink">
+</div>
+
+
+
+
+<script>
+
+/* ロード消す */
+window.addEventListener("load",()=>{
+  const load=document.getElementById("load");
+  load.style.opacity="0";
+  setTimeout(()=>load.style.display="none",500);
+});
+
+/* マウス肉球 */
+let t=0;
+document.addEventListener("mousemove",e=>{
+  const now=Date.now();
+  if(now-t<80)return;
+  t=now;
+
+  const img=document.createElement("img");
+  img.src="nikukyu.png";
+  img.className="sparkpaw";
+  img.style.left=e.clientX+"px";
+  img.style.top=e.clientY+"px";
+  document.body.appendChild(img);
+  setTimeout(()=>img.remove(),700);
+});
+
+/* クリック肉球 */
+document.addEventListener("click",e=>{
+  const img=document.createElement("img");
+  img.src="paw.png";
+  img.className="clickpaw";
+  img.style.left=e.clientX+"px";
+  img.style.top=e.clientY+"px";
+  document.body.appendChild(img);
+  setTimeout(()=>img.remove(),900);
+});
+</script>
+
+<script>
+const btn = document.getElementById("darkToggle");
+
+btn.onclick = () => {
+  document.body.classList.toggle("dark");
+};
+</script>
+
+</body>
+</html>
+
+
