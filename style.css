@@ -414,10 +414,12 @@ body.dark #darkToggle{
   }
 
 }
-/* スマホだけ立ち絵消す */
+/* =====================
+スマホだけ立ち絵消す
+===================== */
 @media (max-width:700px){
   .bg-chara{
-    display:none;
+    display:none !important;
   }
 }
 
