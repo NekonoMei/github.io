@@ -370,3 +370,48 @@ body.dark .nav a{
 body.dark #darkToggle{
   color:#7fe6ff;
 }
+/* =========================
+   スマホ最適化
+========================= */
+@media (max-width:700px){
+
+  /* ロゴ */
+  .logo{
+    width:220px;
+    left:10px;
+    top:10px;
+  }
+
+  /* 右上メニュー */
+  .nav{
+    right:10px;
+    top:15px;
+    gap:14px;
+    font-size:12px;
+  }
+
+  .nav a{
+    font-size:12px;
+  }
+
+  /* カード */
+  .card{
+    width:92%;
+    padding:25px;
+    margin:80px auto;
+  }
+
+  h1{
+    font-size:28px;
+  }
+
+  /* 立ち絵 */
+  .bg-chara{
+    width:160px;
+    right:-30px;
+    bottom:-10px;
+    opacity:0.9;
+  }
+
+}
+
